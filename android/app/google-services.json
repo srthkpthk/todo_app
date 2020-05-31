@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "916367022668",
+    "firebase_url": "https://srthk-notes.firebaseio.com",
+    "project_id": "srthk-notes",
+    "storage_bucket": "srthk-notes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916367022668:android:069a92e3dd61562156b2e9",
+        "android_client_info": {
+          "package_name": "srthk.pthk.todoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916367022668-d474t15lq1q35c7ktjrdfi4acalgqss1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "srthk.pthk.todoapp",
+            "certificate_hash": "b71784d11ae809fa853a1f47e73eb2659f7bc98a"
+          }
+        },
+        {
+          "client_id": "916367022668-ij2979appfb83bs98hs6rno4q3u3kket.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm5RQXawCkzgXUx2xw6DCo476JfGmcsjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916367022668-ij2979appfb83bs98hs6rno4q3u3kket.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
