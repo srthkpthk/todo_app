@@ -1,65 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todoapp/bloc/sign_in/sign_in_bloc.dart';
+import 'package:todoapp/data/bloc/sign_in/sign_in_bloc.dart';
+import 'package:todoapp/screens/todo_home_screen.dart';
+import 'package:todoapp/screens/widgets/error_widget.dart';
+import 'package:todoapp/screens/widgets/loading_widget.dart';
 
-class Wrapper extends StatefulWidget {
-  @override
-  _WrapperState createState() => _WrapperState();
-}
-
-class _WrapperState extends State<Wrapper> {
-  SignInBloc _bloc;
-
-  @override
-  void initState() {
-    super.initState();
-    _bloc = SignInBloc();
-  }
+class Wrapper extends StatelessWidget {
+  final _bloc = SignInBloc();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: BlocBuilder(
-      bloc: _bloc,
-      // ignore: missing_return
-      builder: (_, SignInState state) {
-        if (state is SigningInProgress) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        } else if (state is SignInFailed) {
-          return Center(
-            child: Container(
-              child: Column(
-                children: <Widget>[
-                  Text(
-                    'SignIn Failed...',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'TODO',
+          style: TextStyle(fontSize: 30),
+        ),
+      ),
+      body: Container(
+        child: BlocBuilder(
+          bloc: _bloc,
+          // ignore: missing_return
+          builder: (_, SignInState state) {
+            if (state is InitialSignInState) {
+              _bloc.add(SignIn());
+              return LoadingWidget();
+            }
+            if (state is SignInLoading) {
+              return LoadingWidget();
+            }
+            if (state is SignInLoadError) {
+              return Column(
+                children: [
+                  LoadErrorWidget(),
                   RaisedButton(
-                    onPressed: () {
-                      _bloc.add(SigningIn());
-                    },
+                    onPressed: () => _bloc.add(SignIn()),
                     child: Text(
-                      'Retry',
-                      style: TextStyle(fontSize: 20),
+                      'Retry?',
+                      style: TextStyle(fontSize: 15),
                     ),
                   )
                 ],
-              ),
-            ),
-          );
-        } else if (state is SignInSuccessFul) {
-          return Center(
-            child: Text(
-              'Done',
-            ),
-          );
-        }
-      },
-    ));
+              );
+            }
+            if (state is SignInLoaded) {
+              return TodoHomeScreen(state.user);
+            }
+          },
+          // ignore: missing_return
+        ),
+      ),
+    );
   }
 }

@@ -23,11 +23,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cloud_firestore: ^0.13.6
   firebase_auth: ^0.16.1
   google_sign_in: ^4.5.1
-  bloc: ^4.0.0
+  cloud_firestore: ^0.13.6
   flutter_bloc: ^4.0.0
+  google_sign_in_web: ^0.9.1+1
+
+
 
 
 

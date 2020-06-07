@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:916367022668:android:069a92e3dd61562156b2e9",
+        "mobilesdk_app_id": "1:916367022668:android:07f2b1f08a7c70e856b2e9",
         "android_client_info": {
           "package_name": "srthk.pthk.todoapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "916367022668-d474t15lq1q35c7ktjrdfi4acalgqss1.apps.googleusercontent.com",
+          "client_id": "916367022668-trvm8vjna680lh9pnr2m7b41ha0931je.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "srthk.pthk.todoapp",
-            "certificate_hash": "b71784d11ae809fa853a1f47e73eb2659f7bc98a"
+            "certificate_hash": "c6388e3ad0f0a9c7d889b1c36d1d65673fb0001a"
           }
         },
         {
